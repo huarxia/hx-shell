@@ -3,7 +3,7 @@
 var fs = require('fs');
 var path = process.cwd();
 const chalk = require('chalk');
-
+var chalkColor = ['black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white', 'gray', 'redBright', 'greenBright', 'yellowBright', 'blueBright', 'magentaBright', 'cyanBright', 'whiteBright'];
 var package = require('../package.json');
 var name = package.name;
 var version = package.version;
@@ -19,8 +19,11 @@ var run= function (obj) {
             if(err){
                 return console.log(err);
             }
+            chalkColorLen = chalkColor.length;
             for(var i = 0; i < files.length; i += 1){
-                console.log(files[i]);
+                var n = Math.ceil(Math.random() * chalkColorLen) - 1;
+                n = n === 0? 1: n;
+                console.log(chalk[chalkColor[n]](files[i]));
             }
         });
     }

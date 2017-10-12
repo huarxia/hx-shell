@@ -1,0 +1,18 @@
+{
+  "name": "hx-shell",
+  "version": "1.0.0",
+  "description": "hx ---",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaywcjlove/wcj.git"
+  },
+  "main": "index.js",
+  "bin": {
+    "hx": "bin/index.js"
+  },
+  "author": "liubiao0810@live.cn",
+  "license": "MIT",
+  "devDependencies": {
+    "chalk": "^2.1.0"
+  }
+}

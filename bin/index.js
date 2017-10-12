@@ -1,14 +1,14 @@
 #!/usr/bin/env node  
 
-var fs = require('fs');
-var path = process.cwd();
-const chalk = require('chalk');
+var fs         = require('fs');
+var path       = process.cwd();
+const chalk    = require('chalk');
 var chalkColor = ['black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white', 'gray', 'redBright', 'greenBright', 'yellowBright', 'blueBright', 'magentaBright', 'cyanBright', 'whiteBright'];
-var package = require('../package.json');
-var name = package.name;
-var version = package.version;
-const log = console.log;
-var run= function (obj) {
+var package    = require('../package.json');
+var name       = package.name;
+var version    = package.version;
+const log      = console.log;
+var run = function (obj) {
     if(obj[0] === '-v'){
         log('version is ' + chalk.green(version));
     }else if(obj[0] === '-h'){

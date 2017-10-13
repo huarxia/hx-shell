@@ -16,4 +16,5 @@ const chalk    = require('chalk');
  */
 module.exports = function() {
     console.log('version is ' + chalk.green(version));
+    console.log('nodejs version is ' + chalk.green(process.version));
 }

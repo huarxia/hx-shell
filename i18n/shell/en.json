@@ -4,5 +4,7 @@
     "whitefile_err": "fail to write to file!",
     "set_lang": "The language set is",
     "lang": "Supported languages include",
-    "local_ip_is": "local IP is"
+    "local_ip_is": "local IP is",
+    "version_is": "version is",
+    "node_version_is": "node version is"
 }

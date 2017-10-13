@@ -21,6 +21,6 @@ module.exports = function() {
         lang = 'zh';
     }
     var lg = require('../i18n/shell/' + lang + '.json');
-    console.log('version is ' + chalk.green(version));
-    console.log('nodejs version is ' + chalk.green(process.version));
+    console.log(lg.version_is + ': ' + chalk.green(version));
+    console.log(lg.node_version_is + ': ' + chalk.green(process.version));
 }

@@ -8,6 +8,7 @@
 const package    = require('../package.json');
 const version    = package.version;
 const name       = package.name;
+var langJson = require('../i18n/lang.json');
 const chalk    = require('chalk');
 
 /**
@@ -15,6 +16,11 @@ const chalk    = require('chalk');
  * @return {String} 返回本机IP地址
  */
 module.exports = function() {
+    var lang = langJson.lang || 'zh';
+    if (langJson.lang !== 'en' && langJson.lang !== 'zh') {
+        lang = 'zh';
+    }
+    var lg = require('../i18n/shell/' + lang + '.json');
     console.log('version is ' + chalk.green(version));
     console.log('nodejs version is ' + chalk.green(process.version));
 }

@@ -1,0 +1,8 @@
+{
+    "lang_message": "The current language environment is",
+    "readfile_err": "fail to read file!",
+    "whitefile_err": "fail to write to file!",
+    "set_lang": "The language set is",
+    "lang": "Supported languages include",
+    "local_ip_is": "local IP is"
+}

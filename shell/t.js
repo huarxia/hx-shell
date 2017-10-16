@@ -1,5 +1,5 @@
 /**
- * @file:      文件说明
+ * @file:      获取当前时间
  * @author:    花夏(liubiao@itoxs.com)
  * @version:   V0.0.1
  * @date:      2017-10-12 11:12:15
@@ -19,17 +19,11 @@ module.exports = {
      * @return {String} 返回本机IP地址
      */
     run: function() {
-        var interfaces = require('os').networkInterfaces();
+        var sd = require('silly-datetime');
+        var formateTime = lang === 'zh'? 'YYYY年MM月DD日 HH:mm:ss' : 'YYYY-MM-DD HH:mm:ss';
+        var time = sd.format(new Date(), formateTime);
         const lg = require('../i18n/shell/' + lang + '.json');
-        for (var devName in interfaces) {
-            var items = interfaces[devName];
-            for (var i = 0, len = items.length; i< len; i++) {
-                var alias = items[i];
-                if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {
-                    log(lg.local_ip_is + ': ' + chalk.green(alias.address));
-                }
-            }
-        }
+        log(lg.current_time + ': ' + chalk.green(time));
     },
 
     /**
@@ -37,6 +31,6 @@ module.exports = {
      */
     help: function() {
         const lg = require('../i18n/help/' + lang + '.json');
-        log('  -ip [' + lg.ip_help + ']');
+        log('  -t [' + lg.ip_help + ']');
     }
 };

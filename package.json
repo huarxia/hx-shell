@@ -14,6 +14,7 @@
   "license": "MIT",
   "devDependencies": {
     "chalk": "^2.1.0",
-    "require-dir": "^0.3.2"
+    "require-dir": "^0.3.2",
+    "silly-datetime": "^0.1.2"
   }
 }

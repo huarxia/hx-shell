@@ -6,5 +6,6 @@
     "lang": "支持的语言",
     "local_ip_is": "本地IP是",
     "version_is": "版本是",
-    "node_version_is": "node版本是"
+    "node_version_is": "node版本是",
+    "current_time": "当前时间"
 }

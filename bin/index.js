@@ -1,8 +1,9 @@
 #!/usr/bin/env node  
 
-var fs         = require('fs');
-const chalk    = require('chalk');
-const log      = console.log;
+var fs             = require('fs');
+const chalk        = require('chalk');
+const log          = console.log;
+const fsExistsSync = require('../lib/fsExistsSync');
 var run = function (obj) {
     // 如果没有参数则运行帮助文档
     if (obj.length <= 0) {
@@ -17,14 +18,11 @@ var run = function (obj) {
     // 获取第二个参数并去掉首尾空格
     var param = paramArr[1].replace(/(^\s*)|(\s*$)/g, '');
     const path = '../shell/' + param + '.js';
-    fs.exists(path, function(exists) { 
-        // 如果随便输入一个命令则显示帮助; 
-        if (exists) {
-            param = 'h';
-        }
-        var fun = require('../shell/' + param).run;
-        fun();
-    });
+    if (!fsExistsSync(path)) {
+         param = 'h';
+    }
+    var fun = require('../shell/' + param).run;
+    fun();
 };
 
 // 获取除第一个命令以后的参数，使用空格拆分

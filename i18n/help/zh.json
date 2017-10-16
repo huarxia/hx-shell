@@ -1,0 +1,8 @@
+{
+    "show_help": "显示帮助",
+    "show_version": "显示版本",
+    "ip_help": "获取本机IP地址",
+    "show_catalog": "显示目录",
+    "show_lang": "显示语言",
+    "set_lang": "设置语言: 'hx -lang {zh | en}'"
+}

@@ -10,6 +10,10 @@ const path   = require('path');
 const log    = console.log;
 const chalk  = require('chalk');
 var langJson = require('../i18n/lang.json');
+var lang     = langJson.lang || 'zh';
+if (langJson.lang !== 'en' && langJson.lang !== 'zh') {
+    lang = 'zh';
+}
 
 module.exports = {
     /**
@@ -17,10 +21,6 @@ module.exports = {
      * @return {String} 返回本机IP地址
      */
     run: function() {
-        var lang = langJson.lang || 'zh';
-        if (langJson.lang !== 'en' && langJson.lang !== 'zh') {
-            lang = 'zh';
-        }
         var lg = require('../i18n/shell/' + lang + '.json');
         var argv = process.argv.slice(2);
         var len = argv.length;
@@ -47,5 +47,14 @@ module.exports = {
                 }  
             });
         }
+    },
+
+    /**
+     * [help] 显示帮助信息
+     */
+    help: function() {
+        const lg = require('../i18n/help/' + lang + '.json');
+        log('  -lang  [' + lg.show_lang + ']');
+        log('  -lang zh | en  [' + lg.set_lang + ']');
     }
 };

@@ -1,0 +1,8 @@
+{
+    "show_help": "Show help",
+    "show_version": "Show version",
+    "ip_help": "Get the native IP address",
+    "show_catalog": "Show catalog",
+    "show_lang": "Show lang",
+    "set_lang": "Set lang: 'hx -lang {zh | en}'"
+}

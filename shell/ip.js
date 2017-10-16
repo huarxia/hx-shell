@@ -6,7 +6,11 @@
  */
 
 const log      = console.log;
-var langJson = require('../i18n/lang.json');
+const langJson = require('../i18n/lang.json');
+var lang = langJson.lang || 'zh';
+if (langJson.lang !== 'en' && langJson.lang !== 'zh') {
+    lang = 'zh';
+}
 const chalk    = require('chalk');
 
 module.exports = {
@@ -16,12 +20,7 @@ module.exports = {
      */
     run: function() {
         var interfaces = require('os').networkInterfaces();
-        var lang = langJson.lang || 'zh';
-        if (langJson.lang !== 'en' && langJson.lang !== 'zh') {
-            lang = 'zh';
-        }
-        var lg = require('../i18n/shell/' + lang + '.json');
-
+        const lg = require('../i18n/shell/' + lang + '.json');
         for (var devName in interfaces) {
             var items = interfaces[devName];
             for (var i = 0, len = items.length; i< len; i++) {
@@ -31,5 +30,13 @@ module.exports = {
                 }
             }
         }
+    },
+
+    /**
+     * [help] 显示帮助信息
+     */
+    help: function() {
+        const lg = require('../i18n/help/' + lang + '.json');
+        log('  -ip [' + lg.ip_help + ']');
     }
 };

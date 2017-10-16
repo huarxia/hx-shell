@@ -28,5 +28,18 @@ module.exports = {
                 log(chalk[chalkColor[n]](files[i]));
             }
         });
+    },
+
+    /**
+     * [help] 显示帮助信息
+     */
+    help: function() {
+        const langJson = require('../i18n/lang.json');
+        var lang = langJson.lang || 'zh';
+        if (langJson.lang !== 'en' && langJson.lang !== 'zh') {
+            lang = 'zh';
+        }
+        const lg = require('../i18n/help/' + lang + '.json');
+        log('  -l  [' + lg.show_catalog + ']');
     }
 };

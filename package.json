@@ -13,6 +13,7 @@
   "author": "liubiao0810@live.cn",
   "license": "MIT",
   "devDependencies": {
-    "chalk": "^2.1.0"
+    "chalk": "^2.1.0",
+    "require-dir": "^0.3.2"
   }
 }

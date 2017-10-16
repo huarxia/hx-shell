@@ -19,7 +19,7 @@ var run = function (obj) {
     const path = '../shell/' + param + '.js';
     fs.exists(path, function(exists) { 
         // 如果随便输入一个命令则显示帮助; 
-        if (!exists) {
+        if (exists) {
             param = 'h';
         }
         var fun = require('../shell/' + param);

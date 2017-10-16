@@ -2,7 +2,6 @@
 
 const chalk    = require('chalk');
 const log      = console.log;
-const readdir  = require('../shell/readdir').readdir;
 var run = function (obj) {
     // 如果没有参数则运行帮助文档
     if (obj.length <= 0) {

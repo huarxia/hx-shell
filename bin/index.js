@@ -22,7 +22,7 @@ var run = function (obj) {
         if (exists) {
             param = 'h';
         }
-        var fun = require('../shell/' + param);
+        var fun = require('../shell/' + param).run;
         fun();
     });
 };

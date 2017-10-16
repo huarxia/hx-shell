@@ -5,8 +5,9 @@
  * @date:      2017-10-13 16:59:42
  */
 const log      = console.log;
-module.exports = function() {
-    log('Useage:');
-    log('  -v --version [show version]');
-}
-
+module.exports = {
+    run: function() {
+        log('Useage:');
+        log('  -v --version [show version]');
+    }
+};

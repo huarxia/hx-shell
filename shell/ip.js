@@ -9,25 +9,27 @@ const log      = console.log;
 var langJson = require('../i18n/lang.json');
 const chalk    = require('chalk');
 
-/**
- * [getIp]  获取本机IP地址
- * @return {String} 返回本机IP地址
- */
-module.exports = function() {
-    var interfaces = require('os').networkInterfaces();
-    var lang = langJson.lang || 'zh';
-    if (langJson.lang !== 'en' && langJson.lang !== 'zh') {
-        lang = 'zh';
-    }
-    var lg = require('../i18n/shell/' + lang + '.json');
+module.exports = {
+    /**
+     * [getIp]  获取本机IP地址
+     * @return {String} 返回本机IP地址
+     */
+    run: function() {
+        var interfaces = require('os').networkInterfaces();
+        var lang = langJson.lang || 'zh';
+        if (langJson.lang !== 'en' && langJson.lang !== 'zh') {
+            lang = 'zh';
+        }
+        var lg = require('../i18n/shell/' + lang + '.json');
 
-    for (var devName in interfaces) {
-        var items = interfaces[devName];
-        for (var i = 0, len = items.length; i< len; i++) {
-            var alias = items[i];
-            if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {
-                log(lg.local_ip_is + ': ' + chalk.green(alias.address));
+        for (var devName in interfaces) {
+            var items = interfaces[devName];
+            for (var i = 0, len = items.length; i< len; i++) {
+                var alias = items[i];
+                if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {
+                    log(lg.local_ip_is + ': ' + chalk.green(alias.address));
+                }
             }
         }
     }
-}
+};

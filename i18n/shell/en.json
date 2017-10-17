@@ -7,5 +7,6 @@
     "local_ip_is": "local IP is",
     "version_is": "version is",
     "node_version_is": "node version is",
-    "current_time": "Current time"
+    "current_time": "Current time",
+    "isNaN": "Is NaN"
 }

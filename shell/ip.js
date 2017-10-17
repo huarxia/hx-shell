@@ -15,7 +15,7 @@ const chalk = require('chalk');
 
 module.exports = {
     /**
-     * [getIp]  获取本机IP地址
+     * [run]  获取本机IP地址
      * @return {String} 返回本机IP地址
      */
     run: function() {
